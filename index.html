@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campus Facility Reservation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f9;
+            margin: 0;
+            padding: 40px 15px;
+        }
+
+        .container {
+            background: white;
+            max-width: 550px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            text-align: center;
+            color: #17365d;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            background: #17365d;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #24558c;
+        }
+
+        .footer {
+            text-align: center;
+            color: #777;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Campus Facility Reservation</h1>
+
+        <p class="description">
+            Ajman University Campus Operations System
+        </p>
+
+        <form action="ReservationServlet" method="POST">
+
+            <label for="userName">Full Name</label>
+            <input
+                type="text"
+                id="userName"
+                name="userName"
+                placeholder="Enter your full name"
+                required>
+
+            <label for="userRole">User Role</label>
+            <select id="userRole" name="userRole" required>
+                <option value="">Select your role</option>
+                <option value="STUDENT">Student</option>
+                <option value="FACULTY">Faculty</option>
+            </select>
+
+            <label for="itemCategory">Item Category</label>
+            <select id="itemCategory" name="itemCategory" required>
+                <option value="">Select an item</option>
+                <option value="LAPTOP">Laptop - 50 AED/day</option>
+                <option value="PROJECTOR">Projector - 80 AED/day</option>
+                <option value="POD">Study Pod - 100 AED/day</option>
+            </select>
+
+            <label for="quantity">Quantity</label>
+            <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                value="1"
+                required>
+
+            <label for="bookingDays">Booking Days</label>
+            <input
+                type="number"
+                id="bookingDays"
+                name="bookingDays"
+                min="1"
+                value="1"
+                required>
+
+            <button type="submit">
+                Submit Reservation
+            </button>
+
+        </form>
+
+        <p class="footer">
+            Ajman University | Campus Reservation System
+        </p>
+
+    </div>
+
+</body>
+</html>
